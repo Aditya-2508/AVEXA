@@ -1,0 +1,317 @@
+@import "tailwindcss";
+
+@theme {
+  /* =========================================================
+     BRAND COLORS
+  ========================================================== */
+
+  --color-navy: #071426;
+  --color-blue: #1557d6;
+  --color-cyan: #18c8f5;
+
+  /* =========================================================
+     UI COLORS
+  ========================================================== */
+
+  --color-ink: #111827;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-offwhite: #f7f9fc;
+
+  /* =========================================================
+     TYPOGRAPHY
+  ========================================================== */
+
+  --font-sans:
+    "Inter", "Manrope", "Plus Jakarta Sans", ui-sans-serif, system-ui,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --font-mono:
+    "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+/* ===========================================================
+   BASE
+=========================================================== */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #111827;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ===========================================================
+   SELECTION
+=========================================================== */
+
+::selection {
+  background: #1557d6;
+  color: #ffffff;
+}
+
+/* ===========================================================
+   CONTAINER
+=========================================================== */
+
+.container-x {
+  width: min(1180px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+/* ===========================================================
+   SECTION
+=========================================================== */
+
+.section {
+  padding: 110px 0;
+}
+
+/* ===========================================================
+   EYEBROW
+=========================================================== */
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  color: #1557d6;
+}
+
+.eyebrow::before {
+  content: "";
+  display: block;
+
+  width: 32px;
+  height: 1px;
+
+  background: #1557d6;
+}
+
+/* ===========================================================
+   TECHNICAL TEXT
+=========================================================== */
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ===========================================================
+   SUBTLE GRID
+=========================================================== */
+
+.grid-line {
+  background-image:
+    linear-gradient(to right, rgba(226, 232, 240, 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.55) 1px, transparent 1px);
+
+  background-size: 42px 42px;
+}
+
+/* ===========================================================
+   VERY LIGHT GRID
+=========================================================== */
+
+.grid-line-soft {
+  background-image:
+    linear-gradient(to right, rgba(226, 232, 240, 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(226, 232, 240, 0.35) 1px, transparent 1px);
+
+  background-size: 64px 64px;
+}
+
+/* ===========================================================
+   FOCUS ACCESSIBILITY
+=========================================================== */
+
+.focus-ring:focus-visible {
+  outline: 2px solid rgba(24, 200, 245, 0.8);
+  outline-offset: 4px;
+}
+
+/* ===========================================================
+   BUTTON BASE
+=========================================================== */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 0 24px;
+
+  background: #071426;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    background-color 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.btn-primary:hover {
+  background: #1557d6;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(7, 20, 38, 0.1);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* ===========================================================
+   SECONDARY BUTTON
+=========================================================== */
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 52px;
+  padding: 0 24px;
+
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #071426;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition:
+    border-color 250ms ease,
+    background-color 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.btn-secondary:hover {
+  border-color: rgba(21, 87, 214, 0.35);
+  background: #f7f9fc;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(7, 20, 38, 0.05);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* ===========================================================
+   PREMIUM HOVER
+   Use this for cards / rows
+=========================================================== */
+
+.hover-surface {
+  transition:
+    background-color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease,
+    transform 300ms ease;
+}
+
+.hover-surface:hover {
+  background: #fbfcfe;
+  border-color: rgba(21, 87, 214, 0.2);
+  box-shadow: 0 18px 45px rgba(7, 20, 38, 0.06);
+  transform: translateY(-2px);
+}
+
+/* ===========================================================
+   THIN DIVIDER
+=========================================================== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+/* ===========================================================
+   BLUE ACCENT LINE
+=========================================================== */
+
+.accent-line {
+  width: 40px;
+  height: 2px;
+  background: #1557d6;
+}
+
+/* ===========================================================
+   SCROLLBAR
+=========================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===========================================================
+   MOBILE
+=========================================================== */
+
+@media (max-width: 640px) {
+  .container-x {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+}
+
+/* ===========================================================
+   REDUCED MOTION
+=========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
